@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
 export default defineConfig({
+  base: '/Loja-Sueli/',
   build: {
     rollupOptions: {
       input: {
