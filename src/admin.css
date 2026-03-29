@@ -1,0 +1,64 @@
+.admin-container {
+  padding: 40px 20px;
+}
+
+.admin-panel {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: var(--shadow-sm);
+  overflow-x: auto;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.admin-table th, .admin-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.admin-table th {
+  background-color: #f9f9f9;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.admin-table tr:hover {
+  background-color: #fcfcfc;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.edit-btn {
+  color: var(--color-secondary);
+}
+.edit-btn:hover {
+  background-color: rgba(0, 188, 212, 0.1);
+}
+
+.delete-btn {
+  color: var(--color-primary);
+}
+.delete-btn:hover {
+  background-color: rgba(233, 30, 99, 0.1);
+}

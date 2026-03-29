@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administração - Loja Sueli</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="stylesheet" href="/src/admin.css">
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container nav-content">
+        <a href="/" class="logo">
+          <img src="/images/logo.png" alt="Loja Sueli - Tecidos & Uniformes" class="logo-img">
+        </a>
+        <div class="nav-actions">
+          <a href="/" class="btn btn-secondary">Voltar para Loja</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="container admin-container">
+      <section class="admin-panel">
+        <div class="admin-header">
+          <h2>Gerenciar Produtos</h2>
+          <button id="add-product-btn" class="btn btn-primary">Novo +</button>
+        </div>
+
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Categoria</th>
+              <th>Preço (R$)</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="admin-product-list">
+            <!-- Items via JS -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Modal para adicionar/editar produto -->
+      <div id="product-modal" class="modal hidden">
+        <div class="modal-overlay" id="product-overlay"></div>
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 id="modal-title">Novo Produto</h2>
+            <button class="close-btn" id="close-product-modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <form id="product-form" class="checkout-form">
+              <input type="hidden" id="prod-id">
+              <div class="form-group">
+                <label for="prod-name">Nome do Uniforme</label>
+                <input type="text" id="prod-name" required>
+              </div>
+              <div class="form-group">
+                <label for="prod-category">Categoria</label>
+                <select id="prod-category" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-family: inherit;" required>
+                  <option value="Infantil">Educação Infantil</option>
+                  <option value="Fundamental I">Ensino Fundamental I</option>
+                  <option value="Fundamental II">Ensino Fundamental II</option>
+                  <option value="Médio">Ensino Médio</option>
+                  <option value="Geral">Unissex / Geral</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="prod-desc">Descrição</label>
+                <input type="text" id="prod-desc" required>
+              </div>
+              <div class="form-group">
+                <label for="prod-price">Preço (R$)</label>
+                <input type="number" id="prod-price" step="0.01" required>
+              </div>
+              <div class="form-group">
+                <label for="prod-image">URL da Imagem</label>
+                <input type="url" id="prod-image" required placeholder="https://...">
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Salvar Produto</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="/src/admin.js"></script>
+  </body>
+</html>

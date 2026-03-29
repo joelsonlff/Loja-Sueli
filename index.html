@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loja Sueli - Tecidos & Uniformes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css">
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container nav-content">
+        <a href="/" class="logo">
+          <img src="/images/logo.png" alt="Loja Sueli - Tecidos & Uniformes" class="logo-img">
+        </a>
+        <div class="nav-actions">
+          <button id="cart-btn" class="cart-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <span id="cart-count">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-slider">
+        <div class="slider-container" id="hero-slider-container">
+          <!-- Slide 1 -->
+          <div class="slide active">
+            <div class="slide-bg" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop');"></div>
+            <div class="container hero-content">
+              <h1>Uniformes escolares de alta qualidade.</h1>
+              <p>Conforto e durabilidade para acompanhar a energia do dia a dia.</p>
+              <a href="#produtos" class="btn btn-primary">Ver Uniformes</a>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="slide">
+            <div class="slide-bg" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=2067&auto=format&fit=crop');"></div>
+            <div class="container hero-content">
+              <h1>Volta às Aulas com Estilo</h1>
+              <p>Conheça nossa nova coleção Ensino Médio.</p>
+              <a href="#produtos" class="btn btn-accent">Ver Coleção</a>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="slide">
+            <div class="slide-bg" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop');"></div>
+            <div class="container hero-content">
+              <h1>Educação Infantil</h1>
+              <p>Peças confortáveis e fáceis de lavar para os pequenos.</p>
+              <a href="#produtos" class="btn btn-primary">Ver Infantil</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="slider-nav">
+          <button class="slider-dot active" data-index="0"></button>
+          <button class="slider-dot" data-index="1"></button>
+          <button class="slider-dot" data-index="2"></button>
+        </div>
+      </section>
+
+      <section id="produtos" class="products-section">
+        <div class="container">
+          <h2 class="section-title">Nossos <span>Uniformes</span></h2>
+          
+          <div class="category-filters" id="category-filters">
+            <button class="filter-btn active" data-category="Todos">Todos</button>
+            <button class="filter-btn" data-category="Infantil">Ed. Infantil</button>
+            <button class="filter-btn" data-category="Fundamental I">Fundamental I</button>
+            <button class="filter-btn" data-category="Fundamental II">Fundamental II</button>
+            <button class="filter-btn" data-category="Médio">Ensino Médio</button>
+          </div>
+
+          <div id="product-list" class="product-grid">
+            <!-- Produtos serão injetados aqui via JS -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-content">
+        <p>&copy; 2026 Loja Sueli - Tecidos & Uniformes. Todos os direitos reservados.</p>
+        <p>Desenvolvido para entrega no colégio.</p>
+      </div>
+    </footer>
+
+    <!-- Modal do Carrinho -->
+    <div id="cart-modal" class="modal hidden">
+      <div class="modal-overlay" id="cart-overlay"></div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Seu Pedido</h2>
+          <button class="close-btn" id="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div id="cart-items" class="cart-items-list">
+            <!-- Itens do carrinho aqui -->
+          </div>
+          <div class="cart-total">
+            <span>Total: </span>
+            <span id="cart-total-price">R$ 0,00</span>
+          </div>
+          <form id="checkout-form" class="checkout-form">
+            <h3>Dados do Aluno</h3>
+            <div class="form-group">
+              <label for="student-name">Nome do Aluno</label>
+              <input type="text" id="student-name" required placeholder="Ex: João Silva">
+            </div>
+            <div class="form-group">
+              <label for="student-grade">Série / Turma</label>
+              <input type="text" id="student-grade" required placeholder="Ex: 5º Ano A">
+            </div>
+            <button type="submit" class="btn btn-success btn-block">Confirmar Pedido via WhatsApp</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Promocional -->
+    <div id="promo-modal" class="modal hidden">
+      <div class="modal-overlay" id="promo-overlay"></div>
+      <div class="modal-content promo-content">
+        <button class="close-btn" id="close-promo-modal">&times;</button>
+        <div class="promo-body">
+          <div class="promo-image">
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1520&auto=format&fit=crop" alt="Promoção">
+          </div>
+          <div class="promo-text">
+            <h2>Bem-vindo(a) à Loja Sueli!</h2>
+            <p>Garanta os uniformes com <strong>10% de desconto</strong> no seu primeiro pedido pelo WhatsApp.</p>
+            <div class="promo-code-box">
+              <span class="promo-code">BEMVINDO10</span>
+            </div>
+            <button class="btn btn-primary btn-block" id="btn-use-promo">Aproveitar Oferta</button>
+            <button class="btn-text" id="btn-no-thanks">Não, obrigado.</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
