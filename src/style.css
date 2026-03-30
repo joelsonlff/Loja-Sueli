@@ -62,7 +62,7 @@ h1, h2, h3, h4 {
 }
 
 .logo-img {
-  height: 55px;
+  height: 85px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -253,6 +253,82 @@ h1, h2, h3, h4 {
 .btn-block {
   display: block;
   width: 100%;
+}
+
+/* Partner Schools Marquee Section */
+.partner-schools {
+  background-color: var(--color-white);
+  padding: 40px 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.marquee-container {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.marquee-container::before,
+.marquee-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 15vw;
+  max-width: 150px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee-container::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-white), transparent);
+}
+
+.marquee-container::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-white), transparent);
+}
+
+.marquee-content {
+  display: flex;
+  width: max-content;
+  animation: scrollMarquee 25s linear infinite;
+}
+
+.partner-schools:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+.marquee-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 80px;
+  padding-right: 80px;
+}
+
+.marquee-group img {
+  height: 90px;
+  width: 200px;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.7);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.marquee-group img:hover {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.1);
+}
+
+@keyframes scrollMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* Products Section */
